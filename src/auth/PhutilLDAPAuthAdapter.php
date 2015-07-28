@@ -248,7 +248,9 @@ final class PhutilLDAPAuthAdapter extends PhutilAuthAdapter {
       }
     }
 
-    $this->bindLDAP($conn, $distinguished_name, $login_pass);
+    if ($login_pass) {
+      $this->bindLDAP($conn, $distinguished_name, $login_pass);
+    }
 
     $result = $this->searchLDAPForRecord($search_query);
     if (!$result) {
