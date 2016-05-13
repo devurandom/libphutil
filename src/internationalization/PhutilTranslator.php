@@ -178,7 +178,6 @@ final class PhutilTranslator extends Phobject {
     if ($is_gender) {
       return $this->locale->selectGenderVariant($variant, $translations);
     } else {
-
       // NOTE: This is a microoptimization which slightly improves performance
       // for common languages with simple plural rules. Languages do not need
       // to be added here even if they use the simple rules. The benefit of
@@ -188,6 +187,7 @@ final class PhutilTranslator extends Phobject {
         'en_GB' => true,
         'en_ES' => true,
         'ko_KR' => true,
+        'de_DE' => true,
       );
 
       if (isset($simple_plural[$this->localeCode])) {
